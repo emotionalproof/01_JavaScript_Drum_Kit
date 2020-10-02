@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
         document.addEventListener('keydown', (e) => {
             let character = e.key
             charBox = [...keyDivs].filter(div => div.firstElementChild.textContent === character.toUpperCase())[0]
-            charBox === undefined ? null : charBox.className = 'playing'
+            charBox === undefined ? null : charBox.classList.add('playing')
             let dataKey = (charBox === undefined? null : charBox.dataset.key)
             let audioNode = document.querySelector(`audio[data-key='${dataKey}']`)
             let sound = (audioNode === null ? null : new Audio(audioNode.src))
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const keyupHandler = () => {
         document.addEventListener('keyup', (e) => {
-            charBox === undefined ? null : charBox.className = 'key'
+            charBox === undefined ? null : charBox.classList.remove('playing')
         })
     }
     
