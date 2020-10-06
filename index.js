@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     }
 
+    //maybe try keycode
+
     const keyupHandler = () => {
         document.addEventListener('keyup', (e) => {
             charBox === undefined ? null : charBox.classList.remove('playing')
